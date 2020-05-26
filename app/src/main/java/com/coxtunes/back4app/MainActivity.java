@@ -1,22 +1,22 @@
 package com.coxtunes.back4app;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.coxtunes.back4app.databinding.ActivityMainBinding;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
-import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,28 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
         // call to load when activity
         fetchUserInformation();
+
+        /*
+        * Search Funcationality
+        *
+        * */
+        binding.searchedittext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // call filter method & pass user inputed text
+                filter(s.toString());
+            }
+        });
     }
 
     /*
@@ -102,6 +124,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    /*
+     * Data filter Method
+     * */
+    private void filter(String text) {
+
+        List<UserModel> userdatalist = new ArrayList<>();
+        for (UserModel model : userlist)
+        {
+            // We are searching Username here
+            if(model.getName().toLowerCase().contains(text.toLowerCase()))
+            {
+                userdatalist.add(model);
+            }
+        }
+        // call adapter class filter method
+        adapter.filterlist(userdatalist);
     }
 
 

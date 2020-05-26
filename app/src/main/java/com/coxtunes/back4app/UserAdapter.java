@@ -58,6 +58,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Holder> {
         return userlist.size();
     }
 
+    /*
+    * Filter list method
+    * */
+    public void filterlist(List<UserModel> userdatalist) {
+        userlist = userdatalist;
+        notifyDataSetChanged();
+    }
+
     class Holder extends RecyclerView.ViewHolder
     {
         private TextView userid,name,email;
