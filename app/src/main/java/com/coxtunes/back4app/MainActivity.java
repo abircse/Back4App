@@ -130,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
      * Data filter Method
      * */
     private void filter(String text) {
-
         List<UserModel> userdatalist = new ArrayList<>();
         for (UserModel model : userlist)
         {
@@ -138,6 +137,11 @@ public class MainActivity extends AppCompatActivity {
             if(model.getName().toLowerCase().contains(text.toLowerCase()))
             {
                 userdatalist.add(model);
+                binding.nodatatext.setVisibility(View.GONE);
+            }
+            else
+            {
+                binding.nodatatext.setVisibility(View.VISIBLE);
             }
         }
         // call adapter class filter method
