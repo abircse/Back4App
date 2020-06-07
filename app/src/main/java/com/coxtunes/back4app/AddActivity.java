@@ -34,6 +34,7 @@ public class AddActivity extends AppCompatActivity {
                 ParseObject parseObject = new ParseObject("UserRegistration");
                 parseObject.put("Name", binding.name.getText().toString());
                 parseObject.put("Email", binding.email.getText().toString());
+                parseObject.put("Type", binding.type.getText().toString());
                 parseObject.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {

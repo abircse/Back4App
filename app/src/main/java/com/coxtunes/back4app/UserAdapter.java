@@ -73,7 +73,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Holder> {
 
         public Holder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
-            userid = itemView.findViewById(R.id.userid);
+            userid = itemView.findViewById(R.id.usertype);
             name = itemView.findViewById(R.id.username);
             email = itemView.findViewById(R.id.useremail);
             delete = itemView.findViewById(R.id.delete);

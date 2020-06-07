@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -89,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                         userlist.add(new UserModel(userid, username, useremail));
                         binding.progressBar.setVisibility(View.GONE);
                     }
+
+                    if (userlist.isEmpty())
+                    {
+                        binding.progressBar.setVisibility(View.GONE);
+                        Toast.makeText(MainActivity.this, "No Data Found", Toast.LENGTH_SHORT).show();
+                    }
+
                     // set adapter & binding data & set to recyclerview
                     adapter = new UserAdapter(userlist, MainActivity.this);
                     binding.recyclerview.setAdapter(adapter);
@@ -151,5 +159,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoadd(View view) {
         startActivity(new Intent(getApplicationContext(), AddActivity.class));
+    }
+
+    public void gotoquery(View view) {
+        startActivity(new Intent(getApplicationContext(), QueryActivity.class));
     }
 }
