@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.coxtunes.back4app.databinding.ActivityQueryBinding;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -53,6 +54,7 @@ public class QueryActivity extends AppCompatActivity {
 
                         if (e==null)
                         {
+
                             //Log.d("RESULT", objects.get(0).getString("Email"));
                            for (ParseObject object : objects)
                            {
@@ -101,6 +103,20 @@ public class QueryActivity extends AppCompatActivity {
                     public void done(ParseObject object, ParseException e) {
                         if (object != null)
                         {
+
+//                            /*
+//                             * Object Read Write Permission check [Code Sample]
+//                             * */
+//                            ParseACL de = object.getACL();
+//                            if (de.getPublicReadAccess()) // ALSO CHECK WRITE ACCESS BY [de.getPublicWriteAccess()]
+//                            {
+//                                // IF PUBLIC WRITE ACCESS TRUE
+//                            }
+//                            else
+//                            {
+//                                // IF PUBLIC WRITE ACCESS FLASE
+//                            }
+
                             String email = object.getString("Email");
                             String createdat = String.valueOf(object.getCreatedAt());
                             String objectid = object.getObjectId();
