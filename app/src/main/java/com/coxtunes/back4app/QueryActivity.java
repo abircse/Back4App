@@ -16,6 +16,7 @@ import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseACL;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -116,6 +117,14 @@ public class QueryActivity extends AppCompatActivity {
 //                            {
 //                                // IF PUBLIC WRITE ACCESS FLASE
 //                            }
+
+
+                            /*
+                            * For read any file path
+                            * */
+//                            ParseFile image = (ParseFile) object.get("images");
+//                            String url = image.getUrl();
+//                            Log.d("IMAGEURL",url);
 
                             String email = object.getString("Email");
                             String createdat = String.valueOf(object.getCreatedAt());
