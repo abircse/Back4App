@@ -118,9 +118,8 @@ public class QueryActivity extends AppCompatActivity {
 //                                // IF PUBLIC WRITE ACCESS FLASE
 //                            }
 
-
                             /*
-                            * For read any file path
+                            * For read any uploaded file path
                             * */
 //                            ParseFile image = (ParseFile) object.get("images");
 //                            String url = image.getUrl();
