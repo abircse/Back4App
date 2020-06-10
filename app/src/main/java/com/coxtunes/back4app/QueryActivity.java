@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class QueryActivity extends AppCompatActivity {
 
@@ -173,5 +174,47 @@ public class QueryActivity extends AppCompatActivity {
 //    numbers.add(3);
 //    numbers.add(4);
 //    query.whereContainsAll("arrayKey", numbers);
+
+
+    /*
+    * Relational Query
+    *
+    * */
+//    public void loadMonuments() throws ParseException {
+//        ParseQuery<ParseObject> cirtyQuery = ParseQuery.getQuery("City");
+//        ParseQuery<ParseObject> query = ParseQuery.getQuery("AttractionList");
+//        query.whereEqualTo("cityId", cirtyQuery.get("PxeVSZFJJa"));
+//        query.findInBackground(new FindCallback<ParseObject>() {
+//            @Override
+//            public void done(List<ParseObject> objects, ParseException e) {
+//                if (e == null)
+//                {
+//                    for (int i = 0 ; i < objects.size(); i++)
+//                    {
+//                        ParseObject date = null;
+//                        try {
+//                            date = Objects.requireNonNull(objects.get(i).getParseObject("attractionId")).fetchIfNeeded();
+//
+//                            // Get Finally Data
+//                            String name = date.getString("attractionName");
+//                            String image = date.getString("image");
+//
+//                            Log.d("Something", name+image);
+//                        } catch (ParseException ex) {
+//                            ex.printStackTrace();
+//                        }
+//
+//                    }
+//                }
+//                else
+//                {
+//                    MartinToast.Show(e.getMessage());
+//                }
+//
+//            }
+//        });
+//
+//    }
+
 
 }
