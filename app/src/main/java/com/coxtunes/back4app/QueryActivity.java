@@ -217,4 +217,33 @@ public class QueryActivity extends AppCompatActivity {
 //    }
 
 
+    // i have a pointer in a user object then how can i check
+    //this for current user then how to get this id & related data from
+    // from pointer object
+//    private fun loadTestData() {
+//        ParseUser.getCurrentUser()?.let {
+//            val mTempId = it.getParseObject("schoolID")
+//            when(mTempId == null){
+//                true ->{
+//                    showToast(this, "No school ID found")
+//                }
+//                else ->{
+//                    mTempId.fetchIfNeededInBackground<ParseObject> { `object`, e ->
+//                            when(e == null){
+//                        true ->{
+//                                `object`.getString("itinerary")?.let {
+//                                showToast(this, it)
+//                            }
+//                        }
+//                            else ->{
+//                            showToast(this, e.message.toString())
+//                        }
+//                    }
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+
 }
